@@ -15,10 +15,10 @@ A simplified scheme of a program:
 
 1. An array of numbers is divided in equal parts and spreaded among all processes.
 2. The first process in this hypercube calculates pivot as a mean of numbers in his array.
-3. Each process divides its part in two according to pivot. Process with first bit of binary rank equal to 0 send numbers > pivot to its partner. Partners (first bit = 1) send smaller numbers. Thus 0* processes will have smaller numbers, 1* prosesses - greater numbers.
+3. Each process divides its part in two according to pivot. Process with first bit of binary rank equal to 0 sends numbers > pivot to its partner. Partners (first bit = 1) send smaller numbers. Thus 0* processes will have smaller numbers, 1* prosesses - greater numbers.
 4. Hypercube is divided in two hypercubes. Now we won't look on the first bit, the criterion of partner-choosing will be the second bit.
 5. Steps 2-4 are repeated N times, where 2^N = number of processes.
-6. After N iterations the numbers all process 0 will be < process 1 < process 2 < ... and so on. Processes can now sort numbers sequentially with normal quicksort.
+6. After N iterations the numbers of process 0 will be < the numbers of process 1 < the numbers of process 2 < ... and so on. Processes can now sort numbers sequentially with normal quicksort.
 7. Results are gathered and written by the master process.
 
 Credit:
